@@ -3,21 +3,22 @@
 //  CubeController
 //
 //  Created by Øyvind Hauge on 11/08/16.
+//  Edited by Tomas Cerny on 15/09/20
 //  Copyright © 2016 Oyvind Hauge. All rights reserved.
 //
 
 import UIKit
 
 @available(iOS 9.0, *)
-@objc protocol OHCubeViewDelegate: class {
-    
+@objc public protocol OHCubeViewDelegate: class {
     @objc optional func cubeViewDidScroll(_ cubeView: OHCubeView)
+    @objc optional func cubeViewDidEndDecelerating(_ cubeView: OHCubeView)
 }
 
 @available(iOS 9.0, *)
 open class OHCubeView: UIScrollView, UIScrollViewDelegate {
     
-    weak var cubeDelegate: OHCubeViewDelegate?
+    public weak var cubeDelegate: OHCubeViewDelegate?
     
     fileprivate let maxAngle: CGFloat = 60.0
     
@@ -91,6 +92,10 @@ open class OHCubeView: UIScrollView, UIScrollViewDelegate {
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         transformViewsInScrollView(scrollView)
         cubeDelegate?.cubeViewDidScroll?(self)
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        cubeDelegate?.cubeViewDidEndDecelerating?(self)
     }
     
     // MARK: Private methods
