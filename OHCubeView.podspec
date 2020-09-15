@@ -32,7 +32,7 @@ paging between stories has a 3D cube animation.
 
                    DESC
 
-  s.homepage     = "https://github.com/oyvind-hauge/OHCubeView"
+  s.homepage     = "https://github.com/tomascern/ohcubeview"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -79,7 +79,7 @@ paging between stories has a 3D cube animation.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { :git => "https://github.com/oyvind-hauge/OHCubeView.git", :tag => "#{s.version}" }
+  s.source = { :git => "https://github.com/tomascern/ohcubeview.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
